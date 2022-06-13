@@ -1,0 +1,39 @@
+Je déclare mes 4 premières variables :
+
+let scores, 
+roundScore, 
+activePlayer, 
+gamePlaying;
+
+Je déclare une première fonction "init" comprenant l'état initiale de mes premières variiables déclarés ci-dessus
+en début de chauqes partie.
+
+function init() {
+    scores = [0, 0];
+    activePlayer = 0;
+    roundScore = 0;
+    gamePlaying = true;
+
+- l'état de mon dé lié à ma class .dice sur mon index.html
+    document.querySelector('.dice').style.display = 'none';
+
+- L'état du score de départ pour le 1er joueur.
+    document.getElementById('score-0').textContent = '0';
+
+- L'état de départ du score  pour le 2eme joueur.
+    document.getElementById('score-1').textContent = '0';
+
+- L'état de départ du contenu de "current pour le 1er joueur.
+    document.getElementById('current-0').textContent = '0';
+
+- L'état de départ du contenu de "current pour le 2eme joueur.
+    document.getElementById('current-1').textContent = '0';
+
+- L'état de départ du contenu texte de 
+    document.getElementById('name-0').textContent = 'Player 1';
+    document.getElementById('name-1').textContent = 'Player 2';
+    document.querySelector('.player-0-panel').classList.remove('winner');
+    document.querySelector('.player-1-panel').classList.remove('winner');
+    document.querySelector('.player-0-panel').classList.remove('active');
+    document.querySelector('.player-1-panel').classList.remove('active');
+    document.querySelector('.player-0-panel').classList.add('active');

@@ -138,7 +138,7 @@ Enfin je cré une fonction nextPlayer.
 
 function nextPlayer() {
 
- Si le joueur actif
+ Si le joueur actif est stricetement égale à 0
     activePlayer === 0 ? activePlayer = 1 : activePlayer = 0;
     roundScore = 0;
 

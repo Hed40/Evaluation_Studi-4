@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="fr-FR">
+<html lang="fr-FR, en-US">
 
 <head>
     <meta charset="UTF-8">
@@ -8,11 +8,11 @@
     <link href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" rel="stylesheet" type="text/css">
     <link type="text/css" rel="stylesheet" href="style.css">
 
-    <title>Jeux de dés</title>
+    <title>A Dice Game</title>
 </head>
 
 <body>
-    <div class="wrapper clearfix">
+    <div class="gamingZone">
         <div class="player-0-panel active">
             <div class="player-name" id="name-0">Player 1</div>
             <div class="player-score" id="score-0"></div>
@@ -37,11 +37,14 @@
 
         <img src="Images/dice-5.png" alt="Dice" class="dice">
     </div>
-
+    <audio id='audio' src="Sound/Sound_Press.wav"></audio>
+    <audio id='applause' src="Sound/Applause.wav"></audio>
+    
     <script src="app.js"></script>
     <script src="jquery-3.6.0.min.js"></script>
     <script type="module" src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.esm.js"></script>
     <script nomodule src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.js"></script>
 
 </body>
+
 </html>

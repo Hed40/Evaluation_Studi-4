@@ -3,24 +3,24 @@
     padding: 0;
 }
 
-.clearfix::after {
+.gamingZone::after {
     content: "";
     display: table;
     clear: both;
 }
 
 body {
-    background-image: linear-gradient(rgba(62, 20, 20, 0.4), rgba(62, 20, 20, 0.4)), url(back.jpg);
+    background-image: linear-gradient(rgba(189, 19, 19, 0.4), rgba(62, 20, 20, 0.4));/*Dégradé en arrière plan*/
     background-size: cover;
     background-position: center;
     font-family: Lato;
     font-weight: 300;
     position: relative;
     height: 100vh;
-    color: #555;
+    color: rgb(85, 85, 85);
 }
 
-.wrapper {
+.gamingZone {
     width: 1000px;
     position: absolute;
     top: 50%;
@@ -139,7 +139,7 @@ i {
     top: 178px;
     transform: translateX(-50%);
     height: 100px;
-    box-shadow: 0px 10px 60px rgba(0, 0, 0, 0.10);
+    box-shadow: 0px 10px 40px rgba(0, 0, 0, 0.10);
 }
 
 .winner { background-color: #f7f7f7; }

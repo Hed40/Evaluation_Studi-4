@@ -49,7 +49,7 @@ document.querySelector('.btn-roll').addEventListener('click', () => {
 
 //Action sur bouton Hold.
 document.querySelector('.btn-hold').addEventListener('click', () => {
-    
+
     if (gamePlaying) {
         // Ajoute le score courant au score général du joueur.
         scores[activePlayer] += roundScore;
@@ -61,7 +61,7 @@ document.querySelector('.btn-hold').addEventListener('click', () => {
         if (scores[activePlayer] >= 10) {
             document.querySelector('#name-' + activePlayer).textContent = 'Winner!';
             document.querySelector('.dice').style.display = 'none'; // cache le dé.
-       
+
             document.querySelector('.player-' + activePlayer + '-panel').classList.add('winner');
             document.querySelector('.player-' + activePlayer + '-panel').classList.remove('active');
             gamePlaying = false;
@@ -71,7 +71,7 @@ document.querySelector('.btn-hold').addEventListener('click', () => {
             nextPlayer();
         }
     }
-    audio.play('#audio');
+audio.play('#audio');
 });
 
 //Action sur le bouton NewGame
@@ -91,13 +91,13 @@ function nextPlayer() {
 }
 
 function updateName() {
-    
-  let player_1Name = prompt('Enter a Player 1 name');
-  document.querySelector('#name-0').textContent = player_1Name;
+
+    let player_1Name = prompt('Enter a Player 1 name');
+    document.querySelector('#name-0').textContent = player_1Name;
 
 
-  let player_2Name = prompt('Enter a Player 2 name');
-  document.querySelector('#name-1').textContent = player_2Name;
+    let player_2Name = prompt('Enter a Player 2 name');
+    document.querySelector('#name-1').textContent = player_2Name;
 
 }
 

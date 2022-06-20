@@ -6,15 +6,15 @@ init();
 
 document.querySelector('.btn-roll').addEventListener('click', () => {
     if (gamePlaying) {
-        //1. Numéro au hazar
+        //Numéro au hazar
         let dice = Math.floor(Math.random() * 6) + 1;
 
-        //2. Afficher le résultat du lancé
+        //Afficher le résultat du lancé
         let diceDOM = document.querySelector('.dice');
         diceDOM.style.display = 'block';
         diceDOM.src = 'Images/dice-' + dice + '.png';
 
-        //3 Mise à jour du score si le numéro du dé n'est pas egale à 1.
+        //Mise à jour du score si le numéro du dé n'est pas egale à 1.
         if (dice !== 1) {
             //Ajoute le score
             roundScore += dice;
@@ -29,7 +29,7 @@ document.querySelector('.btn-roll').addEventListener('click', () => {
 
 document.querySelector('.btn-hold').addEventListener('click', () => {
     if (gamePlaying) {
-        // Add CURRENT score to GLOBAL score
+        // Ajoute le score courant au score général du joueur
         scores[activePlayer] += roundScore;
 
         // Update de l'interface Utilisateur
@@ -66,7 +66,7 @@ function nextPlayer() {
 
 document.querySelector('.btn-new').addEventListener('click', init);
 
-function init() {
+function init() { //init de la partie
     scores = [0, 0];
     activePlayer = 0;
     roundScore = 0;

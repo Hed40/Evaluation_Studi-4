@@ -1,12 +1,11 @@
-Je déclare mes 4 premières variables :
+ - Je déclare mes 4 premières variables :
 
 let scores, 
 roundScore, 
 activePlayer, 
 gamePlaying;
 
-Je déclare une première fonction "init" comprenant l'état initiale de mes premières variiables déclarés ci-dessus
-en début de chauqes partie.
+- Je déclare une première fonction "init" comprenant l'état initiale de mes premières variiables déclarés ci-	dessus en début de chaque partie.
 
 function init() {
     scores = [0, 0];
@@ -14,7 +13,7 @@ function init() {
     roundScore = 0;
     gamePlaying = true;
 
-- l'état de mon dé lié à ma class .dice sur mon index.html
+- l'état de mon dé lié à ma classe .dice sur mon index.html : non visible
     document.querySelector('.dice').style.display = 'none';
 
 - L'état du score de départ pour le 1er joueur.
@@ -23,17 +22,133 @@ function init() {
 - L'état de départ du score  pour le 2eme joueur.
     document.getElementById('score-1').textContent = '0';
 
-- L'état de départ du contenu de "current pour le 1er joueur.
+- L'état de départ du contenu de "current" pour le 1er joueur.
     document.getElementById('current-0').textContent = '0';
 
-- L'état de départ du contenu de "current pour le 2eme joueur.
+- L'état de départ du contenu de "current" pour le 2eme joueur.
     document.getElementById('current-1').textContent = '0';
 
-- L'état de départ du contenu texte de 
+- L'état de départ du contenu 'namz' pour le joueur 1.
     document.getElementById('name-0').textContent = 'Player 1';
+
+- L'état de départ du contenu 'namz' pour le joueur 2.
     document.getElementById('name-1').textContent = 'Player 2';
+
+- Enlever l'état "winner" du player-1 panel.
     document.querySelector('.player-0-panel').classList.remove('winner');
+
+- Enlever l'état "winner" du player-2 panel.
     document.querySelector('.player-1-panel').classList.remove('winner');
+
+- Enlever l'état "active" du player-1
     document.querySelector('.player-0-panel').classList.remove('active');
+
+- Enlever l'état "active" du player-2
     document.querySelector('.player-1-panel').classList.remove('active');
+
+- Ajoute le player-1 en état actif
     document.querySelector('.player-0-panel').classList.add('active');
+
+Ensuite nous allons configurer chaques bouton de l'interface :
+
+
+- Je sélectionne le bouton "Roll Dice" de mon document index.HTML et lui attribuer 
+un "listener" avec une arrow function comprenant une condition à chaques clics sur ce bouton.
+
+document.querySelector('.btn-roll').addEventListener('click', () => {
+
+- Si l'état de ma viriable (gamePlaying) est True, 
+    if (gamePlaying) {
+
+- alors le résultat de ma variable "dice" que je déclare ici aura un résultat aléatoire inférieur
+ ou égal à l'interval donné entre 1 et 6. ( Le +1 permet de ne pas prendre en compte le 0 puisque pas 
+de dé à zéro, mes images de dés sont aussi nommés de 1 à 6 )
+       
+        let dice = Math.floor(Math.random() * 6) + 1;
+
+- Ensuite, nous allons afficher ce "résultat aléatoire" par le biais d'une image, en allant modifier 
+la ligne de code "<img src="Images/dice-5.png" alt="Dice" class="dice">" de manière dynamique. 
+
+Ici les images des dés ont été stockés dans le répertoire "Images/dice.
+
+	Je crée une variable "diceDOM" en la liant à ma classe .dice de mon index.Html.
+
+        let diceDOM = document.querySelector('.dice');
+
+	J'affiche l'image en attribuant un display "block" à ma variable diceDOM.
+        diceDOM.style.display = 'block';
+
+	Pour ainsi changer  dynamiquement le nom de mon répertoire source grace à ma variable dice précédement 	définie.
+
+        diceDOM.src = 'Images/dice-' + dice + '.png'; //
+
+Ainsi, je vais mettre à jour le score du joueur seulement si le résultat n'est pas égale à 1.
+
+        if (dice !== 1) { // Si le résulta n'est pas 1
+
+Alors nous ajoutons le résultat de "dice" dans la variable "roundscore".
+            roundScore += dice;
+            document.querySelector('#current-' + activePlayer).textContent = roundScore;
+        } else {
+Sinon, nous lancerons la fonction nextPlayer pour passer au joueur suivant.
+            nextPlayer();
+        }
+    }
+});
+
+Je sélectionne ensuite le bouton "Hold" de mon document index.HTML et lui attribuer un "listener" avec une arrow function comprenant une condition à chaques clics sur ce bouton.
+
+document.querySelector('.btn-hold').addEventListener('click', () => {
+
+- Si l'état de ma viriable (gamePlaying) est True, 
+
+    if (gamePlaying) {
+
+- Alors Nous ajoutons le score du joueur actif dans la variable roundScore.
+    
+	scores[activePlayer] += roundScore;
+
+- Je met à jour le contenu texte du score du joueur actif.
+
+     document.querySelector('#score-' + activePlayer).textContent = scores[activePlayer];
+
+- Si le joueur actif à gagné la partie et si son score est supérieur ou égal à 100.
+
+	if (scores[activePlayer] >= 100) {
+
+- Alors je modifie le contenu texte de l'Id "name-" par "Winner!".
+
+      document.querySelector('#name-' + activePlayer).textContent = 'Winner!';
+
+- Alors je cache le dé en lui appliquant un display à "none".
+
+      document.querySelector('.dice').style.display = 'none';
+
+- Ainsi nous ajoutons la classe "winner" au player actif.
+document.querySelector('.player-' + activePlayer + '-panel').classList.add('winner');
+
+- Ainsi nous supprimons la classe "active" au player actif
+ document.querySelector('.player-' + activePlayer + '-panel').classList.remove('active');
+
+- Ou alors, nous passons au joueur suivant.
+    } else {
+            nextPlayer();
+        }
+Enfin je cré une fonction nextPlayer.
+
+function nextPlayer() {
+
+ Si le joueur actif
+    activePlayer === 0 ? activePlayer = 1 : activePlayer = 0;
+    roundScore = 0;
+
+    document.getElementById('current-0').textContent = '0';
+    document.getElementById('current-1').textContent = '0';
+
+    document.querySelector('.player-0-panel').classList.toggle('active');
+    document.querySelector('.player-1-panel').classList.toggle('active');
+
+    document.querySelector('.dice').style.display = 'block'; // Affiche le Dé n°1
+}
+
+document.querySelector('.btn-new').addEventListener('click', init);

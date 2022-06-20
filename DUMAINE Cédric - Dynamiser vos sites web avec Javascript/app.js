@@ -6,7 +6,7 @@ init();
 
 document.querySelector('.btn-roll').addEventListener('click', () => {
     if (gamePlaying) {
-        //1. Numéro au hazars
+        //1. Numéro au hazar
         let dice = Math.floor(Math.random() * 6) + 1;
 
         //2. Afficher le résultat du lancé
@@ -14,8 +14,7 @@ document.querySelector('.btn-roll').addEventListener('click', () => {
         diceDOM.style.display = 'block';
         diceDOM.src = 'Images/dice-' + dice + '.png';
 
-
-        //3. Update the round score IF the rolled number was NOT a 1
+        //3 Mise à jour du score si le numéro du dé n'est pas egale à 1.
         if (dice !== 1) {
             //Ajoute le score
             roundScore += dice;
@@ -62,9 +61,6 @@ function nextPlayer() {
     document.querySelector('.player-0-panel').classList.toggle('active');
     document.querySelector('.player-1-panel').classList.toggle('active');
 
-    //document.querySelector('.player-0-panel').classList.remove('active');
-    //document.querySelector('.player-1-panel').classList.add('active');
-
     document.querySelector('.dice').style.display = 'block'; // Affiche le Dé n°1
 }
 
@@ -77,7 +73,7 @@ function init() {
     gamePlaying = true;
 
     document.querySelector('.dice').style.display = 'none';
-    document.getElementById('score-0').textContent = '1';
+    document.getElementById('score-0').textContent = '0';
     document.getElementById('score-1').textContent = '0';
     document.getElementById('current-0').textContent = '0';
     document.getElementById('current-1').textContent = '0';
@@ -90,9 +86,6 @@ function init() {
     document.querySelector('.player-0-panel').classList.add('active');
 }
 
-//document.querySelector('#current-' + activePlayer).textContent = dice;
-//document.querySelector('#current-' + activePlayer).innerHTML = '<em>' + dice + '</em>';
-//var x = document.querySelector('#score-0').textContent;
 
 
 

@@ -3,11 +3,11 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css?family=Lato:100,300,600" rel="stylesheet" type="text/css">
-    <link rel="stylesheet" href="/DUMAINE Cédric - Dynamiser vos sites web avec Javascript/ionic.bundle.css" />
-    <link href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css"  type="text/css" rel="stylesheet">
-    <link type="text/css" rel="stylesheet" href="style.css">
-
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/uicons-regular-rounded/css/uicons-regular-rounded.css'>
+    <link type="text/css" rel="stylesheet" href="style1.css">
     <title>A Dice Game</title>
 </head>
 
@@ -21,7 +21,12 @@
                 <div class="player-current-score" id="current-0">0</div>
             </div>
         </div>
-
+        <div class="UI">
+            <button class="btn-new"><i class="fi fi-rr-add"></i>NEW GAME</button>
+            <img src="Images/dice-5.png" alt="Dice" class="dice">
+            <button class="btn-roll"><i class="fi fi-rr-dice-one"></i>Roll dice</button>
+            <button class="btn-hold"><i class="fi fi-rr-download"></i>Hold</button>
+        </div>
         <div class="player-1-panel">
             <div class="player-name" id="name-1">Player 2</div>
             <div class="player-score" id="score-1"></div>
@@ -30,20 +35,15 @@
                 <div class="player-current-score" id="current-1">0</div>
             </div>
         </div>
-
-        <button class="btn-new"><i class="ion-ios-plus-outline"></i>NEW GAME</button>
-        <button class="btn-roll"><i class="ion-ios-loop-strong"></i>Roll dice</button>
-        <button class="btn-hold"><i class="ion-ios-download-outline"></i>Hold</button>
-
-        <img src="Images/dice-5.png" alt="Dice" class="dice">
+    </div>
+    
     </div>
     <audio id='audio' src="Sound/Sound_Press.wav"></audio>
     <audio id='applause' src="Sound/Applause.wav"></audio>
-    
+
     <script src="app.js"></script>
     <script src="jquery-3.6.0.min.js"></script>
-    <script type="module" src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.esm.js"></script>
-    <script nomodule src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.js"></script>
+
 
 </body>
 

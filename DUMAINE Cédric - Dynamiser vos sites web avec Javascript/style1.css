@@ -1,0 +1,345 @@
+@media screen and (min-width:1024px){
+
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    body {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-image: linear-gradient(rgba(189, 19, 19, 0.4), rgba(62, 20, 20, 0.4));
+        /*Dégradé en arrière plan*/
+        background-size: cover;
+        background-position: center;
+        font-family: Lato;
+        font-weight: 300;
+        height: 100vh;
+        color: rgb(85, 85, 85);
+    }
+
+    .gamingZone {
+        display: flex;
+        position: absolute;
+        width: 1000px;
+        height: 600px;
+        background-color: #fff;
+        box-shadow: 0px 10px 50px rgba(0, 0, 0, 0.3);
+        overflow: hidden;
+    }
+
+
+    .player-1-panel,
+    .player-0-panel {
+        width: 30%;
+        height: 600px;
+        padding: 100px;
+    }
+
+    .UI {
+
+        z-index: 5;
+    }
+
+    /* JOUEURS*/
+
+
+    .player-name {
+        font-size: 40px;
+        text-align: center;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        font-weight: 100;
+        margin-top: 20px;
+        margin-bottom: 10px;
+        position: relative;
+    }
+
+    .player-score {
+        text-align: center;
+        font-size: 80px;
+        font-weight: 100;
+        color: #EB4D4D;
+        margin-bottom: 130px;
+    }
+
+    .active {
+        background-color: #f7f7f7;
+    }
+
+    .active .player-name {
+        font-weight: 300;
+    }
+
+    .active .player-name::after {
+        content: 'Is playing !';
+        font-size: 12px;
+        position: absolute;
+        color: #EB4D4D;
+        top: -15px;
+        right: -50px;
+
+    }
+
+    .player-current-box {
+        background-color: #EB4D4D;
+        color: #fff;
+        width: 40%;
+        margin: 0 auto;
+        padding: 12px;
+        text-align: center;
+    }
+
+    .player-current-label {
+        text-transform: uppercase;
+        margin-bottom: 10px;
+        font-size: 12px;
+        color: #222;
+    }
+
+    .player-current-score {
+        font-size: 30px;
+    }
+
+    button {
+        position: absolute;
+        width: 200px;
+        left: 50%;
+        transform: translateX(-50%);
+        color: #555;
+        background: none;
+        border: none;
+        font-family: Lato;
+        font-size: 20px;
+        text-transform: uppercase;
+        cursor: pointer;
+        font-weight: 300;
+        transition: background-color 0.3s, color 0.3s;
+    }
+
+    button:hover {
+        font-weight: 600;
+    }
+
+    button:hover i {
+        margin-right: 20px;
+    }
+
+    button:focus {
+        outline: none;
+    }
+
+    i {
+        color: #EB4D4D;
+        display: inline-block;
+        margin-right: 15px;
+        font-size: 20px;
+        line-height: 0;
+        vertical-align: text-bottom;
+        margin-top: -4px;
+        transition: margin 0.3s;
+    }
+
+    .btn-new {
+        top: 45px;
+    }
+
+    .btn-roll {
+        top: 403px;
+    }
+
+    .btn-hold {
+        top: 467px;
+    }
+
+    .dice {
+        position: absolute;
+        left: 50%;
+        top: 178px;
+        transform: translateX(-50%);
+        height: 100px;
+        box-shadow: 0px 10px 40px rgba(0, 0, 0, 0.10);
+    }
+
+    .winner {
+        background-color: #f7f7f7;
+    }
+
+    .winner .player-name {
+        font-weight: 300;
+        color: #EB4D4D;
+    }
+}
+@media screen and (max-width:1024px) {
+    *{
+        margin:0;
+        padding:0;
+    }
+    
+    body{
+        max-width: 100%;
+        max-height: 100%;
+        font-weight: 300;
+        font-family: Lato;
+        height: 100vh;
+        color: rgb(85, 85, 85);
+    }
+    .gamingZone {
+        background-color: #fff;
+        box-shadow: 0px 10px 50px rgba(0, 0, 0, 0.3);
+        overflow: hidden;
+    }
+
+    .player-0-panel {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 44vh;
+    }
+
+    .UI {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        width: 100vw;
+        height: 12vh;
+    }
+
+    .player-1-panel {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 44vh;
+    }
+
+
+
+    /*JOUEURS*/
+
+    .player-name {
+        font-size: 40px;
+        text-align: center;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        font-weight: 100;
+        margin-top: 2vh;
+        margin-bottom: 2vh;
+    }
+
+    .player-score {
+        text-align: center;
+        font-size: 80px;
+        font-weight: 100;
+        color: #EB4D4D;
+        margin-bottom: 2vh;
+    }
+    .active {
+        background-color: #f7f7f7;
+    }
+
+    .active .player-name {
+        font-weight: 300;
+    }
+
+    .active .player-name::after {
+        content: 'Is playing !';
+        font-size: 12px;
+        position: absolute;
+        color: #EB4D4D;
+        top: -15px;
+        right: -50px;
+    }
+    .player-current-box {
+        background-color: #EB4D4D;
+        color: #fff;
+        width: 20%;
+        margin: 0 auto;
+        padding: 12px;
+        text-align: center;
+        margin-bottom: 2vh;
+    }
+
+    .player-current-label {
+        text-transform: uppercase;
+        margin-bottom: 10px;
+        font-size: 12px;
+        color: #222;
+    }
+
+    .player-current-score {
+        font-size: 30px;
+    }
+    button {
+        flex-direction: row;
+        position: absolute;
+        width: 200px;
+        color: #555;
+        background: none;
+        border: none;
+        font-family: Lato;
+        font-size: 20px;
+        text-transform: uppercase;
+        cursor: pointer;
+        font-weight: 300;
+        transition: background-color 0.3s, color 0.3s;
+    }
+
+    button:hover {
+        font-weight: 600;
+    }
+
+    button:hover i {
+        margin-right: 20px;
+    }
+
+    button:focus {
+        outline: none;
+    }
+
+    i {
+        color: #EB4D4D;
+        display: inline-block;
+        margin-right: 15px;
+        font-size: 20px;
+        line-height: 0;
+        vertical-align: text-bottom;
+        margin-top: -4px;
+        transition: margin 0.3s;
+    }
+
+    .btn-new {
+        justify-self: center;
+
+    }
+
+    .btn-roll {
+        
+    }
+
+    .btn-hold {
+        right: 2vw;
+    }
+
+    .dice{
+        position: absolute;
+        width: 8vh;
+        height: 8vh;
+        border-radius: 5px;
+        box-shadow: 0px 10px 40px rgba(0, 0, 0, 0.10);
+    }
+
+    .winner {
+        background-color: #f7f7f7;
+    }
+
+    .winner .player-name {
+        font-weight: 300;
+        color: #EB4D4D;
+    }
+}

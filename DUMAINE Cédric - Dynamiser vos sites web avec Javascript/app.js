@@ -9,7 +9,10 @@ function init() { //init de la partie.
     roundScore = 0;
     gamePlaying = true;
     NameChange = updateName;
-    document.querySelector('.dice').style.display = 'none';
+    document.querySelector('.btn-new').style.display = 'block';
+    document.querySelector('.btn-roll').style.display = 'none';
+    document.querySelector('.btn-hold').style.display = 'none';
+    document.querySelector('.dice').style.display = 'none';/*block*/
     document.getElementById('score-0').textContent = '0';
     document.getElementById('score-1').textContent = '0';
     document.getElementById('current-0').textContent = '0';
@@ -21,6 +24,7 @@ function init() { //init de la partie.
     document.querySelector('.player-0-panel').classList.remove('active');
     document.querySelector('.player-1-panel').classList.remove('active');
     document.querySelector('.player-0-panel').classList.add('active');
+
 }
 
 //Action sur Bouton Roll DICE.
@@ -92,14 +96,14 @@ function nextPlayer() {
 
 function updateName() {
 
-    let player_1Name = prompt('Enter a Player 1 name');
+    let player_1Name = prompt('Please ! Enter your Player 1 name', );
     document.querySelector('#name-0').textContent = player_1Name;
-
-
-    let player_2Name = prompt('Enter a Player 2 name');
+  
+    let player_2Name = prompt('Please ! Enter your Player 2 name');
     document.querySelector('#name-1').textContent = player_2Name;
 
 }
+
 
 
 

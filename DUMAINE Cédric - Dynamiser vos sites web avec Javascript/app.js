@@ -1,7 +1,11 @@
 
 let scores, roundScore, activePlayer, gamePlaying;
 
-init();
+document.querySelector('.btn-new').style.display = 'block';
+document.querySelector('.btn-roll').style.display = 'none';
+document.querySelector('.btn-hold').style.display = 'none';
+document.querySelector('.dice').style.display = 'none';
+
 
 function init() { //init de la partie.
     scores = [0, 0];
@@ -9,9 +13,9 @@ function init() { //init de la partie.
     roundScore = 0;
     gamePlaying = true;
     NameChange = updateName;
-    document.querySelector('.btn-new').style.display = 'block';
-    document.querySelector('.btn-roll').style.display = 'none';
-    document.querySelector('.btn-hold').style.display = 'none';
+    document.querySelector('.btn-new').style.display = 'none';
+    document.querySelector('.btn-roll').style.display = 'block';
+    document.querySelector('.btn-hold').style.display = 'block';
     document.querySelector('.dice').style.display = 'none';/*block*/
     document.getElementById('score-0').textContent = '0';
     document.getElementById('score-1').textContent = '0';
@@ -80,7 +84,7 @@ audio.play('#audio');
 
 //Action sur le bouton NewGame
 document.querySelector('.btn-new').addEventListener('click', init);
-document.querySelector('.btn-new').addEventListener('click', NameChange);
+
 
 function nextPlayer() {
     //Joueur Suivant

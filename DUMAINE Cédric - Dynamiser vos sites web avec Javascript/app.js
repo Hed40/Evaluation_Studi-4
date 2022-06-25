@@ -16,7 +16,7 @@ function init() { //init de la partie.
     document.querySelector('.btn-new').style.display = 'none';
     document.querySelector('.btn-roll').style.display = 'block';
     document.querySelector('.btn-hold').style.display = 'block';
-    document.querySelector('.dice').style.display = 'none';/*block*/
+    document.querySelector('.dice').style.display = 'block';/*block*/
     document.getElementById('score-0').textContent = '0';
     document.getElementById('score-1').textContent = '0';
     document.getElementById('current-0').textContent = '0';
@@ -35,7 +35,7 @@ function init() { //init de la partie.
 document.querySelector('.btn-roll').addEventListener('click', () => {
     audio.play('#audio');
     if (gamePlaying) {
-        //Numéro au hazar
+        //Numéro au hazard
         let dice = Math.floor(Math.random() * 6) + 1;
 
         //Afficher le résultat du lancé.
@@ -57,7 +57,6 @@ document.querySelector('.btn-roll').addEventListener('click', () => {
 
 //Action sur bouton Hold.
 document.querySelector('.btn-hold').addEventListener('click', () => {
-
     if (gamePlaying) {
         // Ajoute le score courant au score général du joueur.
         scores[activePlayer] += roundScore;
@@ -68,10 +67,15 @@ document.querySelector('.btn-hold').addEventListener('click', () => {
         // Vérifier si un joueur à gagné la partie.
         if (scores[activePlayer] >= 10) {
             document.querySelector('#name-' + activePlayer).textContent = 'Winner!';
+            document.querySelector('#name-' + activePlayer).textContent = 'Winner!';
             document.querySelector('.dice').style.display = 'none'; // cache le dé.
-
             document.querySelector('.player-' + activePlayer + '-panel').classList.add('winner');
             document.querySelector('.player-' + activePlayer + '-panel').classList.remove('active');
+            document.querySelector('.btn-new').style.display = 'block';
+            document.querySelector('.btn-roll').style.display = 'none';
+            document.querySelector('.btn-hold').style.display = 'none';
+            document.querySelector('.dice').style.display = 'none';
+
             gamePlaying = false;
 
         } else {
@@ -79,12 +83,12 @@ document.querySelector('.btn-hold').addEventListener('click', () => {
             nextPlayer();
         }
     }
-audio.play('#audio');
+    audio.play('#audio');
 });
 
-//Action sur le bouton NewGame
+//Action sur le bouton NewGame // init de la partie // Choix du nom de joueur
 document.querySelector('.btn-new').addEventListener('click', init);
-
+document.querySelector('.btn-new').addEventListener('click', updateName);
 
 function nextPlayer() {
     //Joueur Suivant
@@ -93,20 +97,23 @@ function nextPlayer() {
     document.getElementById('current-0').textContent = '0';
     document.getElementById('current-1').textContent = '0';
     document.querySelector('.player-0-panel').classList.toggle('active');
-    document.querySelector('.player-1-panel').classList.toggle('active');
-    document.querySelector('.dice').style.display = 'block'; // Affiche le Dé n°1
-
-}
+    document.querySelector('.player-1-panel').classList.toggle('active');/*.rotateAnimation(85)*/
+    document.querySelector('.dice').style.display = 'block'; // Affiche le Dé 
+    /*if (window.matchMedia("(max-width:1024px)").matches) {*/
+        /*document.querySelector('.UI').css({ 'transform': 'rotate(180deg)' });*/
+      } 
+    
 
 function updateName() {
 
-    let player_1Name = prompt('Please ! Enter your Player 1 name', );
+    let player_1Name = prompt('Please ! Enter your Player 1 name',);
     document.querySelector('#name-0').textContent = player_1Name;
-  
+
     let player_2Name = prompt('Please ! Enter your Player 2 name');
     document.querySelector('#name-1').textContent = player_2Name;
 
 }
+
 
 
 

@@ -80,7 +80,9 @@ document.querySelector('.btn-hold').addEventListener('click', () => {
 
         } else {
             //Joueur Suivant
+
             nextPlayer();
+            
         }
     }
     audio.play('#audio');
@@ -97,12 +99,10 @@ function nextPlayer() {
     document.getElementById('current-0').textContent = '0';
     document.getElementById('current-1').textContent = '0';
     document.querySelector('.player-0-panel').classList.toggle('active');
-    document.querySelector('.player-1-panel').classList.toggle('active');/*.rotateAnimation(85)*/
-    document.querySelector('.dice').style.display = 'block'; // Affiche le Dé 
-    /*if (window.matchMedia("(max-width:1024px)").matches) {*/
-        /*document.querySelector('.UI').css({ 'transform': 'rotate(180deg)' });*/
-      } 
-    
+    document.querySelector('.player-1-panel').classList.toggle('active');
+    document.querySelector('.dice').style.display = 'block'; // Affiche le Dé
+    /*document.querySelector('.UI').style.transform = 'rotate(180deg)';*/
+    }
 
 function updateName() {
 
@@ -113,6 +113,7 @@ function updateName() {
     document.querySelector('#name-1').textContent = player_2Name;
 
 }
+
 
 
 

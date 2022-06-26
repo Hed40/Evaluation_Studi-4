@@ -1,4 +1,4 @@
-@media screen and (min-width:1024px){
+@media screen and (min-width:1024px) {
 
     * {
         margin: 0;
@@ -38,7 +38,6 @@
     }
 
     .UI {
-
         z-index: 5;
     }
 
@@ -73,7 +72,7 @@
     }
 
     .active .player-name::after {
-        content: 'Is playing !';
+        content: "you're turn!";
         font-size: 12px;
         position: absolute;
         color: #EB4D4D;
@@ -89,6 +88,7 @@
         margin: 0 auto;
         padding: 12px;
         text-align: center;
+        border-radius: 5px;
     }
 
     .player-current-label {
@@ -172,13 +172,14 @@
         color: #EB4D4D;
     }
 }
-@media screen and (max-width:1024px) {
-    *{
-        margin:0;
-        padding:0;
+
+@media screen and (max-width:1024px) and (orientation: portrait) {
+    * {
+        margin: 0;
+        padding: 0;
     }
-    
-    body{
+
+    body {
         max-width: 100%;
         max-height: 100%;
         font-weight: 300;
@@ -186,6 +187,7 @@
         height: 100vh;
         color: rgb(85, 85, 85);
     }
+
     .gamingZone {
         background-color: #fff;
         box-shadow: 0px 10px 50px rgba(0, 0, 0, 0.3);
@@ -195,28 +197,28 @@
     .player-0-panel {
         display: flex;
         flex-direction: column;
-        justify-content: center;
+        justify-content: space-around;
         align-items: center;
         width: 100%;
-        height: 44vh;
-        
+        height: 50vh;
     }
 
     .UI {
         display: flex;
-        justify-content: center;
+        justify-content: space-around;
         align-items: center;
         width: 100vw;
-        height: 12vh;
+        height: 0vh;
+        transform: rotateZ(0deg)
     }
 
     .player-1-panel {
         display: flex;
         flex-direction: column;
-        justify-content: center;
+        justify-content: space-around;
         align-items: center;
         width: 100%;
-        height: 44vh;
+        height: 50vh;
         transform: rotate(180deg);
     }
 
@@ -230,8 +232,7 @@
         text-transform: uppercase;
         letter-spacing: 2px;
         font-weight: 100;
-        margin-top: 2vh;
-        margin-bottom: 2vh;
+        margin-top: 6vh;
     }
 
     .player-score {
@@ -241,9 +242,10 @@
         color: #EB4D4D;
         margin-bottom: 2vh;
     }
+
     .active {
         background-color: #f7f7f7;
-        
+
     }
 
     .active .player-name {
@@ -251,14 +253,15 @@
     }
 
     .active .player-name::after {
-        content:"you're turn!";
-        font-size: 16px;
-        right: 15px;
-        margin-top: -30px;
+        content: "you're turn!";
+        font-size: 12px;
+        right: 20px;
+        margin-top: -20px;
         position: absolute;
         color: #EB4D4D;
     }
-    
+
+
     .player-current-box {
         background-color: #EB4D4D;
         color: #fff;
@@ -267,6 +270,7 @@
         padding: 12px;
         text-align: center;
         margin-bottom: 2vh;
+        border-radius: 5px;
     }
 
     .player-current-label {
@@ -279,11 +283,38 @@
     .player-current-score {
         font-size: 30px;
     }
+
+    @media screen and (max-width: 358px) {
+
+        span {
+            display: none;
+        }
+
+        button {
+            width: 50%;
+            position: absolute;
+            flex-direction: row;
+            justify-content: center;
+            width: 150px;
+            color: #555;
+            background: none;
+            border: none;
+            font-family: Lato;
+            font-size: 15px;
+            text-transform: uppercase;
+            text-overflow: ;
+            cursor: pointer;
+            font-weight: 300;
+            transition: background-color 0.3s, color 0.3s;
+        }
+    }
+
+
     button {
-        flex-direction: row;
         position: absolute;
-        justify-content: center;
-        width: 150px;
+        flex-direction: row;
+        justify-content: space-around;
+        width: 33vw;
         color: #555;
         background: none;
         border: none;
@@ -319,8 +350,7 @@
     }
 
     .btn-new {
-
-
+        width: 33vw;
     }
 
     .btn-roll {
@@ -331,10 +361,216 @@
         right: 2vw;
     }
 
-    .dice{
+    img {
+        width: 33vw;
+    }
+
+    .dice {
         position: absolute;
         width: 10vh;
         height: 10vh;
+        border-radius: 5px;
+        box-shadow: 0px 10px 40px rgba(0, 0, 0, 0.10);
+    }
+
+    .winner {
+        background-color: #f7f7f7;
+    }
+
+    .winner .player-name {
+        font-weight: 300;
+        color: #EB4D4D;
+    }
+}
+
+@media screen and (max-width:1024px) and (orientation: landscape) {
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    body {
+        max-width: 100%;
+        max-height: 100%;
+        font-weight: 300;
+        font-family: Lato;
+        height: 100vh;
+        color: rgb(85, 85, 85);
+    }
+
+    .gamingZone {
+        display: flex;
+        justify-content: center;
+        justify-items: center;
+        align-items: center;
+        background-color: #fff;
+        box-shadow: 0px 10px 50px rgba(0, 0, 0, 0.3);
+        overflow: hidden;
+    }
+
+    .player-1-panel,
+    .player-0-panel {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        width: 50vw;
+        height: 100vh;
+    }
+
+    .UI {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        justify-self: center;
+        align-items: center;
+        width: 0vw;
+        height: 100vh;
+    }
+
+    /*JOUEURS*/
+
+    .player-name {
+        font-size: 40px;
+        text-align: center;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        font-weight: 100;
+        margin-top: 6vh;
+    }
+
+    .player-score {
+        text-align: center;
+        font-size: 80px;
+        font-weight: 100;
+        color: #EB4D4D;
+        margin-bottom: 2vh;
+    }
+
+    .active {
+        background-color: #f7f7f7;
+
+    }
+
+    .active .player-name {
+        font-weight: 400;
+    }
+
+    .active .player-name::after {
+        content: "you're turn!";
+        font-size: 12px;
+        right: 20px;
+        margin-top: -20px;
+        position: absolute;
+        color: #EB4D4D;
+    }
+
+
+    .player-current-box {
+        background-color: #EB4D4D;
+        color: #fff;
+        width: 20%;
+        margin: 0 auto;
+        padding: 12px;
+        text-align: center;
+        margin-bottom: 2vh;
+        border-radius: 5px;
+    }
+
+    .player-current-label {
+        text-transform: uppercase;
+        margin-bottom: 10px;
+        font-size: 12px;
+        color: #222;
+    }
+
+    .player-current-score {
+        font-size: 30px;
+    }
+
+    @media screen and (max-width: 358px) {
+
+        span {
+            display: none;
+        }
+
+        button {
+            width: 50%;
+            position: absolute;
+            flex-direction: row;
+            justify-content: center;
+            width: 150px;
+            color: #555;
+            background: none;
+            border: none;
+            font-family: Lato;
+            font-size: 15px;
+            text-transform: uppercase;
+            text-overflow: ;
+            cursor: pointer;
+            font-weight: 300;
+            transition: background-color 0.3s, color 0.3s;
+        }
+    }
+
+    button {
+        position: absolute;
+        flex-direction: row;
+        justify-content: space-around;
+        width: 33vw;
+        color: #555;
+        background: none;
+        border: none;
+        font-family: Lato;
+        font-size: 15px;
+        text-transform: uppercase;
+        cursor: pointer;
+        font-weight: 300;
+        transition: background-color 0.3s, color 0.3s;
+    }
+
+    button:hover {
+        font-weight: 600;
+    }
+
+    button:hover i {
+        margin-right: 20px;
+    }
+
+    button:focus {
+        outline: none;
+    }
+
+    i {
+        color: #EB4D4D;
+        display: inline-block;
+        margin-right: 15px;
+        font-size: 20px;
+        line-height: 0;
+        vertical-align: text-bottom;
+        margin-top: -4px;
+        transition: margin 0.3s;
+    }
+
+    .btn-new {
+        top: 10vh;
+    }
+
+    .btn-roll {
+        top: 75vh;
+    }
+
+    .btn-hold {
+        top: 85vh;
+    }
+
+    img {
+        width: 33vw;
+    }
+
+    .dice {
+        position: absolute;
+        width: 20vh;
+        height: 20vh;
         border-radius: 5px;
         box-shadow: 0px 10px 40px rgba(0, 0, 0, 0.10);
     }

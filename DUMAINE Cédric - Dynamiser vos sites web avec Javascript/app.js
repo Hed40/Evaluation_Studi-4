@@ -62,7 +62,7 @@ document.querySelector('.btn-hold').addEventListener('click', () => {
         document.querySelector('#score-' + activePlayer).textContent = scores[activePlayer];
 
         // Vérifier si un joueur à gagné la partie.
-        if (scores[activePlayer] >= 10) {
+        if (scores[activePlayer] >= 100) {
             document.querySelector('#name-' + activePlayer).textContent = 'Winner!';
             document.querySelector('#name-' + activePlayer).textContent = 'Winner!';
             document.querySelector('.dice').style.display = 'none'; // cache le dé.

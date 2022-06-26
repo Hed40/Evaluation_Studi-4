@@ -1,11 +1,9 @@
-
 let scores, roundScore, activePlayer, gamePlaying;
 
 document.querySelector('.btn-new').style.display = 'block';
 document.querySelector('.btn-roll').style.display = 'none';
 document.querySelector('.btn-hold').style.display = 'none';
 document.querySelector('.dice').style.display = 'none';
-
 
 function init() { //init de la partie.
     scores = [0, 0];
@@ -54,7 +52,6 @@ document.querySelector('.btn-roll').addEventListener('click', () => {
         }
     }
 });
-
 //Action sur bouton Hold.
 document.querySelector('.btn-hold').addEventListener('click', () => {
     if (gamePlaying) {
@@ -75,19 +72,16 @@ document.querySelector('.btn-hold').addEventListener('click', () => {
             document.querySelector('.btn-roll').style.display = 'none';
             document.querySelector('.btn-hold').style.display = 'none';
             document.querySelector('.dice').style.display = 'none';
-
             gamePlaying = false;
 
         } else {
             //Joueur Suivant
 
             nextPlayer();
-            
         }
     }
     audio.play('#audio');
 });
-
 //Action sur le bouton NewGame // init de la partie // Choix du nom de joueur
 document.querySelector('.btn-new').addEventListener('click', init);
 document.querySelector('.btn-new').addEventListener('click', updateName);
@@ -101,16 +95,29 @@ function nextPlayer() {
     document.querySelector('.player-0-panel').classList.toggle('active');
     document.querySelector('.player-1-panel').classList.toggle('active');
     document.querySelector('.dice').style.display = 'block'; // Affiche le Dé
-    /*document.querySelector('.UI').style.transform = 'rotate(180deg)';*/
-    }
+}
 
+// Choix des noms de joueurs
 function updateName() {
 
     let player_1Name = prompt('Please ! Enter your Player 1 name',);
     document.querySelector('#name-0').textContent = player_1Name;
 
+//Si le nom du joueur 1 n'est pas renseigné alors nom du joueur par defaut est attibué.
+    if (player_1Name = !player_1Name) {
+
+        let defaultName_1 = 'Player 1';
+        document.querySelector('#name-0').textContent = defaultName_1;
+    }
     let player_2Name = prompt('Please ! Enter your Player 2 name');
     document.querySelector('#name-1').textContent = player_2Name;
+
+    if (player_2Name = !player_2Name) {
+
+        let defaultName_2 = 'Player 2';
+        document.querySelector('#name-1').textContent = defaultName_2;
+    }
+
 
 }
 

@@ -134,7 +134,7 @@ document.querySelector('.player-' + activePlayer + '-panel').classList.add('winn
     } else {
             nextPlayer();
         }
-Enfin je cré une fonction nextPlayer.
+Enfin je créé une fonction nextPlayer.
 
 function nextPlayer() {
 

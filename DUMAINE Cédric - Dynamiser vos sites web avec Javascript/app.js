@@ -103,7 +103,7 @@ function updateName() {
     let player_1Name = prompt('Please ! Enter your Player 1 name',);
     document.querySelector('#name-0').textContent = player_1Name;
 
-//Si le nom du joueur 1 n'est pas renseigné alors nom du joueur par defaut est attibué.
+//Si le nom du joueur 1 n'est pas renseigné alors un nom de joueur par defaut est attibué.
     if (player_1Name = !player_1Name) {
 
         let defaultName_1 = 'Player 1';
@@ -117,7 +117,6 @@ function updateName() {
         let defaultName_2 = 'Player 2';
         document.querySelector('#name-1').textContent = defaultName_2;
     }
-
 
 }
 

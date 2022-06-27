@@ -15,15 +15,15 @@ function init() { //init de la partie.
     document.querySelector('.btn-new').style.display = 'none';
     document.querySelector('.btn-roll').style.display = 'block';
     document.querySelector('.btn-hold').style.display = 'block';
-    document.querySelector('.dice').style.display = 'block';/*block*/
+    document.querySelector('.dice').style.display = 'block';/*none*/
 
-    $('score-0').textContent = '0';
-    $('score-1').textContent = '0';
-    $('current-0').textContent = '0';
-    $('current-1').textContent = '0';
-    $('name-0').textContent = 'Player 1';
-    $('name-1').textContent = 'Player 2';
-    
+    document.getElementById('score-0').textContent = '0';
+    document.getElementById('score-1').textContent = '0';
+    document.getElementById('current-0').textContent = '0';
+    document.getElementById('current-1').textContent = '0';
+    document.getElementById('name-0').textContent = 'Player 1';
+    document.getElementById('name-1').textContent = 'Player 2';
+
     document.querySelector('.player-0-panel').classList.remove('winner');
     document.querySelector('.player-1-panel').classList.remove('winner');
     document.querySelector('.player-0-panel').classList.remove('active');
@@ -65,7 +65,7 @@ document.querySelector('.btn-hold').addEventListener('click', () => {
         document.querySelector('#score-' + activePlayer).textContent = scores[activePlayer];
 
         // Vérifier si un joueur à gagné la partie.
-        if (scores[activePlayer] >= 100) {
+        if (scores[activePlayer] >= 10) {
             document.querySelector('#name-' + activePlayer).textContent = 'Winner!';
             document.querySelector('#name-' + activePlayer).textContent = 'Winner!';
             document.querySelector('.dice').style.display = 'none'; // cache le dé.
@@ -106,7 +106,7 @@ function updateName() {
     let player_1Name = prompt('Please ! Enter your Player 1 name',);
     document.querySelector('#name-0').textContent = player_1Name;
 
-//Si le nom du joueur 1 n'est pas renseigné alors un nom de joueur par defaut est attibué.
+    //Si le nom du joueur 1 n'est pas renseigné alors un nom de joueur par defaut est attibué.
     if (player_1Name = !player_1Name) {
 
         let defaultName_1 = 'Player 1';

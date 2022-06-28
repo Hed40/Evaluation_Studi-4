@@ -5,7 +5,8 @@ document.querySelector('.btn-roll').style.display = 'none';
 document.querySelector('.btn-hold').style.display = 'none';
 document.querySelector('.dice').style.display = 'none';
 
-function init() { //init de la partie.
+//init de la partie.
+function init() {
     scores = [0, 0];
     activePlayer = 0;
     roundScore = 0;
@@ -41,7 +42,7 @@ function nextPlayer() {
     document.querySelector('.player-1-panel').classList.toggle('active');
     document.querySelector('.dice').style.display = 'block'; // Affiche le Dé
 }
-// Choix des noms de joueurs
+//Choix des noms de joueurs
 function updateName() {
 
     let player_1Name = prompt('Please enter your Player 1 name !',);
@@ -63,7 +64,6 @@ function updateName() {
     }
 
 }
-
 //Action sur Bouton Roll DICE.
 document.querySelector('.btn-roll').addEventListener('click', () => {
     audio.play('#audio');
@@ -93,7 +93,7 @@ document.querySelector('.btn-hold').addEventListener('click', () => {
         // Ajoute le score courant au score général du joueur.
         scores[activePlayer] += roundScore;
 
-        // Update de l'interface Utilisateur.
+        // Update de du score globale du jour actif.
         document.querySelector('#score-' + activePlayer).textContent = scores[activePlayer];
 
         // Vérifier si un joueur à gagné la partie.
@@ -109,7 +109,6 @@ document.querySelector('.btn-hold').addEventListener('click', () => {
             gamePlaying = false;
 
         } else {
-            //Joueur Suivant
 
             nextPlayer();
         }
@@ -119,9 +118,6 @@ document.querySelector('.btn-hold').addEventListener('click', () => {
 //Action sur le bouton NewGame // init de la partie // Choix du nom de joueur
 document.querySelector('.btn-new').addEventListener('click', init);
 document.querySelector('.btn-new').addEventListener('click', updateName);
-
-
-
 
 
 

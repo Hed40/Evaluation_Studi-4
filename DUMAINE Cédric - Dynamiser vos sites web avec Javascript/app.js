@@ -31,6 +31,38 @@ function init() { //init de la partie.
     document.querySelector('.player-0-panel').classList.add('active');
 
 }
+function nextPlayer() {
+    //swtich player
+    activePlayer === 0 ? activePlayer = 1 : activePlayer = 0;
+    roundScore = 0;
+    document.getElementById('current-0').textContent = '0';
+    document.getElementById('current-1').textContent = '0';
+    document.querySelector('.player-0-panel').classList.toggle('active');
+    document.querySelector('.player-1-panel').classList.toggle('active');
+    document.querySelector('.dice').style.display = 'block'; // Affiche le Dé
+}
+// Choix des noms de joueurs
+function updateName() {
+
+    let player_1Name = prompt('Please enter your Player 1 name !',);
+    document.querySelector('#name-0').textContent = player_1Name;
+
+    //Si le nom du joueur 1 n'est pas renseigné alors un nom de joueur par defaut est attibué.
+    if (player_1Name = !player_1Name) {
+
+        let defaultName_1 = 'Player 1';
+        document.querySelector('#name-0').textContent = defaultName_1;
+    }
+    let player_2Name = prompt('Please enter your Player 2 name !');
+    document.querySelector('#name-1').textContent = player_2Name;
+
+    if (player_2Name = !player_2Name) {
+
+        let defaultName_2 = 'Player 2';
+        document.querySelector('#name-1').textContent = defaultName_2;
+    }
+
+}
 
 //Action sur Bouton Roll DICE.
 document.querySelector('.btn-roll').addEventListener('click', () => {
@@ -89,39 +121,6 @@ document.querySelector('.btn-hold').addEventListener('click', () => {
 document.querySelector('.btn-new').addEventListener('click', init);
 document.querySelector('.btn-new').addEventListener('click', updateName);
 
-function nextPlayer() {
-    //Joueur Suivant
-    activePlayer === 0 ? activePlayer = 1 : activePlayer = 0;
-    roundScore = 0;
-    $('current-0').textContent = '0';
-    $('current-1').textContent = '0';
-    document.querySelector('.player-0-panel').classList.toggle('active');
-    document.querySelector('.player-1-panel').classList.toggle('active');
-    document.querySelector('.dice').style.display = 'block'; // Affiche le Dé
-}
-
-// Choix des noms de joueurs
-function updateName() {
-
-    let player_1Name = prompt('Please ! Enter your Player 1 name',);
-    document.querySelector('#name-0').textContent = player_1Name;
-
-    //Si le nom du joueur 1 n'est pas renseigné alors un nom de joueur par defaut est attibué.
-    if (player_1Name = !player_1Name) {
-
-        let defaultName_1 = 'Player 1';
-        document.querySelector('#name-0').textContent = defaultName_1;
-    }
-    let player_2Name = prompt('Please ! Enter your Player 2 name');
-    document.querySelector('#name-1').textContent = player_2Name;
-
-    if (player_2Name = !player_2Name) {
-
-        let defaultName_2 = 'Player 2';
-        document.querySelector('#name-1').textContent = defaultName_2;
-    }
-
-}
 
 
 
